@@ -3,13 +3,20 @@ import java.util.Scanner;
 import modelos.Rectangulo;
 import modelos.Triangulo;
 import modelos.Circulo;
+import modelos.Punto;
 
 public class App {
 
+    public static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        // actividad1();
+        actividad2();
+        
+        myScanner.close();
+    }
 
-        Scanner myScanner = new Scanner(System.in);
-
+    public static void actividad1(){
         int option = 4;
 
         do {
@@ -84,8 +91,22 @@ public class App {
                     break;
             }
         } while (option != 4);
+    }
 
-        myScanner.close();
+    public static void actividad2(){
+        Punto puntoA = new Punto();
+        Punto puntoB = new Punto();
+
+        puntoA.setX(5);
+        puntoA.setY(0); 
+        
+        puntoB.setX(12);
+        puntoB.setY(0);
+
+        double distancia = puntoA.distanciaDesdeOrigen();
+        System.out.println("Distancia desde origen: " +  distancia);
+
+        System.out.println("Distancia entre punto A y punto B" + Punto.calcularDistancia(puntoA, puntoB));
 
     }
 
