@@ -96,18 +96,29 @@ public class App {
     public static void actividad2(){
         Punto puntoA = new Punto();
         Punto puntoB = new Punto();
+        Punto puntoC = new Punto();
 
-        puntoA.setX(5);
-        puntoA.setY(0); 
+        puntoA.setX(1);
+        puntoA.setY(2); 
         
-        puntoB.setX(12);
-        puntoB.setY(0);
+        puntoB.setX(2);
+        puntoB.setY(4);
 
-        double distancia = puntoA.distanciaDesdeOrigen();
-        System.out.println("Distancia desde origen: " +  distancia);
+        puntoC.setX(3);
+        puntoC.setY(6);
 
-        System.out.println("Distancia entre punto A y punto B" + Punto.calcularDistancia(puntoA, puntoB));
+        System.out.println();    
 
+        System.out.println("Distancia desde origen (0,0) al punto A(1,2): " + puntoA.distanciaDesdeOrigen());
+        System.out.println("Distancia entre punto A(1,2) y B(2,4) es : " + Punto.calcularDistancia(puntoA, puntoB));
+
+        if(Punto.estanAlineados(puntoA, puntoB, puntoC)){
+            System.out.println("Los puntos A(1,2), B(2,4) y C(3,6) estan alineados.");
+        }else{
+            System.out.println("Los puntos A(1,2), B(2,4) y C(3,6) no estan alineados.");
+        }
+        
+        System.out.println();
     }
 
 }
